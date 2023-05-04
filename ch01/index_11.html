@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1 id="m--heading" style="color:darkkhaki;">
+            후미진 언덕 그 기억
+        </h1>
+        <h2>구름 나드리</h2>
+        <article>오늘 날씨는 구려</article>
+    </div>
+    <script>
+        let divContainerNode = document.querySelector("#container");
+        console.log(divContainerNode);
+        let h1Node = divContainerNode.querySelector("h1");
+        h1Node.textContent = "그늘진 그 언덕 그 어디";
+
+        let h2Node = divContainerNode.querySelector("h2");
+        h2Node.textContent = "화창한 그날의 그 언덕"
+    </script>
+</body>
+</html>

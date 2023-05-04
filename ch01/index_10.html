@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1 id="m--heading" style="color:darkkhaki;">
+            후미진 언덕 그 어디
+        </h1>
+        <div id="prodImg">
+        </div>
+    </div>
+      <script>
+        // getElementsByClassName
+        // HTML 컬렉션 타입으로 접근이 된다.
+        // 태그 선택자로 노드 접근해보기
+        let headingNode = document.getElementsByTagName("h1");
+        console.log(headingNode);
+        console.log(headingNode[0].textContent);
+        console.log(headingNode[0].style.color);
+
+      </script>
+            
+
+
+    <!-- <script>
+        // ID 선택자로 노드 접근 해보기
+        let node1 = document.getElementById("heading");
+        console.log(node1);
+        console.log(node1.textContent);
+        let headingStyle = node1.style;
+        console.log(headingStyle);
+        console.log(headingStyle.color);
+    </script> -->
+    
+</body>
+</html>

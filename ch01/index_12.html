@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1 id="m--heading" style="color:darkkhaki;">
+            후미진 언덕 그 기억
+        </h1>
+        <h2>구름 나드리</h2>
+        <article>오늘 날씨는 구려</article>
+    </div>
+    <script>
+        let divContainerNode = document.querySelectorAll("#container");
+        console.log(divContainerNode);
+        // h1 태그에 문자열 변경 (divContainerNode에서 시작하기)
+        divContainerNode[0].querySelector("h1").textContent = "힘내자 내일 안온다."
+
+    </script>
+</body>
+</html>

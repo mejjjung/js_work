@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const book = {
+            title: "플러터 UI 실전",
+            autohr : "김쌤",
+            pages: 200,
+            price: 18000,
+            info: function(){
+                alert(this.title + "은 " + this.pages + " 쪽 입니다.");
+            }
+        };
+
+        book.title = "스프링부트JPA"
+        // 사용하는 모습
+        console.log(book.title);
+        console.log(book.autohr);
+        console.log(book.pages +"쪽");
+        console.log(book.price + "원");
+       // book.info();
+    </script>
+    <script>
+        let person = {
+            name: "김미정",
+            age: 27,
+            hobby: "코딩하기",
+            info: function(){
+                alert(this.name + "은 " + this.hobby + "가 취미 입니다.");
+            }
+        };
+        console.log(person.name);
+        console.log(person.age);
+        console.log(person.hobby);
+        person.info();
+    </script>
+    
+</body>
+</html>
