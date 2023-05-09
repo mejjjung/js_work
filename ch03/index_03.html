@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>콜백 함수</title>
+</head>
+
+<body>
+    <button onclick="runAsyncTask()">Promise Callback Test</button>
+    <script>
+        function doAsyncTask() {
+            return new Promise(function (resolve, reject) {
+
+                setTimeout(() => {
+                    let success = false;
+                    if (success == true) {
+                        resolve("정상적으로 수행을 완료");
+                    } else {
+                        reject("비정상적으로 동작을 처리 하였음");
+                    }
+                }, 3000);
+
+            });
+        }
+        async function runAsyncTask() {
+            console.log("test start");
+
+            try {
+                const result = await doAsyncTask();
+                console.log(result);
+            } catch (error) {
+                console.log(error);
+            }
+            console.log("test end");
+        }
+
+    </script>
+</body>
+
+</html>

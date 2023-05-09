@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+        .box {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .card {
+            border: 1px solid lightblue;
+            box-shadow: 0 4px 4px 0 gray;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>리스트 만들기</h1>
+    <button onclick="render()" id="myBtn">render</button>
+    <div class="box" id="outerBox"></div>
+    <script>
+        function render() {
+            let el = document.querySelector("#outerBox");
+            // 반복문 통해서 E 요소 생성
+            for (let i = 0; i < 10; i++) {
+                el.append(makeCard(i));
+            }
+        }
+
+        $(document).ready(function () {
+            $("#myBtn").on("click", function () {
+                $("render").append();
+            });
+        });
+    </script>
+</body>
+
+</html>

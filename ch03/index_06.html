@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+        .todo-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;;
+            flex-direction: column;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: auto;
+            padding: 10px;
+            width: 550px;
+        }
+       #okBtn{
+        width: 150px;
+       }
+        .cc.checked {
+            text-decoration:line-through;
+            text-decoration-color: red;
+        }
+
+        #result {
+            margin: 10px;
+
+        }
+
+        .todo {
+            margin: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            $("#okBtn").on('click', () => {
+                $.ajax({
+                    type: "get",
+                    url: "https://jsonplaceholder.typicode.com/todos",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json"
+                }).done((data, textStatus, xhr) => {
+                    let todo = xhr.responseJSON;
+                    console.log(todo[0].title);
+                    for(let i = 0; i < todo.length; i++) {
+                        $("#result").append(`<div class="todo"><input type="checkbox" onclick="line(${todo[i].id})"><span class="cc" id="check--${todo[i].id}">${todo[i].title}</span></div>`);
+                        if (i == 4) {
+                            break;
+                        }
+                    }
+                    // console.log(todo);
+                }).fail((error) => {
+                    // 통신 실패 시 콜백 들어옴
+                    console.log("error : " + error);
+                });
+            });
+        });
+        function line(id){
+            let line = document.querySelector("#check--"+id);
+            line.classList.toggle('checked');
+            console.log(line);
+        }
+        </script>
+    <div class="todo-list">
+        <div class="button">
+            <h1>To-Do List</h1>
+            <button id="okBtn">todo 가져오기</button>
+        </div>
+        <div id="result"></div>
+</body>
+
+</html>

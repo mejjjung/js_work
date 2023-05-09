@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            // jquery 통신 코드 사용 방법 
+        //     $("#okBtn").on('click', () => {
+        //         // $.ajax().done().fail();
+        //         $.ajax({
+        //             // 통신 설정 : header, body 설정 등등 ..
+        //         }).done((data, textStatus, xhr) => {
+        //             // 통신 성공 시 콜백 들어옴 
+        //         }).fail((error) => {
+        //             // 통신 실패 시 콜백 들어옴
+        //         });
+        //     });
+        // });
+            $("#okBtn").on('click', () => {
+                $.ajax({
+                    type: "get",
+                    url: "https://jsonplaceholder.typicode.com/todos/10",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json" // 자동으로 js object 파싱 처리 해라 
+                    // 통신 설정 : header, body 설정 등등 ..
+                }).done((data, textStatus, xhr) => {
+                    // 통신 성공 시 콜백 들어옴 
+                    // console.log("data" + data);
+                    // console.log(typeof data);
+                    // console.log(textStatus);
+                    // console.log(xhr);
+                    // console.log(xhr.responseJSON);
+                    let todo = xhr.responseJSON;
+                    $("#result").append(todo.title);
+                    console.log(todo);
+                }).fail((error) => {
+                    // 통신 실패 시 콜백 들어옴
+                    console.log("error : " + error);
+                });
+            });
+        });
+    </script>
+    <div id="result"></div>
+    <button id="okBtn">통신요청</button>
+</body>
+</html>

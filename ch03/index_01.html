@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").on('click',function(){
+                let mText = $("#test").text();
+                alert(mText);
+            });
+        });
+        $(document).ready(function(){
+            $("#btn2").on('click',function(){
+                let node1 = $("#test").html;
+                let node2 = document.querySelector("#test");
+                console.log(typeof node1);
+                console.log(typeof node2);
+            });
+        });
+
+        $(document).ready(function(){
+            $("#btn3").on('click',function(){
+               alert($("#input-test").val());
+            });
+        });
+
+        
+    </script>
+
+    <p id="test">후미진 <input type="text" id="input-test" value="그늘진 어느 언덕"></p>
+    <button id="btn1">글자 가지고 오기</button>
+    <button id="btn2">html 요소 가지고 오기</button>
+    <button id="btn3">value 가지고 오기</button>
+</body>
+</html>
